@@ -1,0 +1,317 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9b6ec3;
+    color: white;
+    padding: 15px 20px;
+    width: 100%;
+}
+.logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    margin-left: 20vw;
+}
+.nav {
+    margin-right: 20vw;
+}
+.nav a, .premium-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 15px;
+}
+.premium-btn {
+    background: #ffcc00;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.sidebar {
+    margin-left: 10vw;
+    width: 20vw; /* Ширина sidebar */
+    background: rgba(244, 235, 250, 0.8); /* Светло-фиолетовый цвет с прозрачностью */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.profile {
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.username {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.get-premium {
+    background: #9b6ec3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.menu ul {
+
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu a {
+    font-size: 2.5vh;
+    display: flex;
+    align-items: left;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.menu a img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.menu a:hover {
+    background: rgba(155, 110, 195, 0.2);
+}
+.content {
+    margin-right: 15vw;
+    flex-grow: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('background-blur.png') no-repeat center center;
+    background-size: cover;
+}
+.credit-options {
+    margin-top: 2.5vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+.num {
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    font-size: 2.5vh;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.option {
+    padding-bottom: 15px;
+    flex: 1 1 auto;
+    width: 5vw;
+    height: 15vh;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #9b6ec3;
+    text-align: center;
+    cursor: pointer;
+    background: #f4effa;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    position: relative;
+    color: black;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.option button {
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    cursor: not-allowed;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    opacity: 0.6;
+    width: 80%;
+    height: 50%;
+    font-size: 1.5vh;
+    max-width: 300px;
+}
+.option:hover {
+    background: #9b6ec3;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.option:hover::before {
+    content: "One time offer!";
+    position: absolute;
+    top: -10px;
+    left: 45%;
+    transform: translateX(-40%);
+    background: #ffcc00;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+.option:hover button {
+    background: #ffcc00;
+    cursor: pointer;
+    opacity: 1;
+    color: black;
+}
+.option:hover .hover-text {
+    display: block;
+}
+.timer {
+    font-size: 5vh;
+    font-weight: 400;
+    width: 15vw;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    }
+    .banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #c85a9d;
+        padding: 10px 15px;
+        border-radius: 10px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        width: 55vw;
+        height: 10vh;
+    }
+
+    .discount {
+        color: yellow;
+        font-size: 6vh;
+        font-weight: bold;
+        margin-right: 15px;
+    }
+
+    .offer-text {
+        flex-grow: 1;
+        font-size: 2vh;
+        opacity: 0.9;
+    }
+.offer-time {
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color:  white;
+}
+.option.row {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.premium-features{
+    width: 100%;
+    margin-top: 15px;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #9966CC;
+    border-radius: 3px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .checkbox-container input[type="checkbox"]:checked {
+    background-color: #9966CC;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9"><path d="M1.5 4.5l3 3 6-6" fill="#fff" stroke="#fff" stroke-width="2"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .checkbox-container label {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .checkbox-container a {
+    color: #9966CC;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .checkbox-container a:hover {
+    text-decoration: underline;
+  }
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .credit-options {
+        justify-content: space-evenly;
+    }
+}
+@media (max-width: 480px) {
+    .option {
+        flex: 1 1 100%;
+    }
+}
