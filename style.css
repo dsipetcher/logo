@@ -1,3 +1,133 @@
+@media (max-width: 768px) {
+    /* Общие стили */
+    body {
+        background: #ffffff;
+        font-size: 14px;
+    }
+
+    /* Шапка */
+    .header {
+        height: 60px;
+        padding: 10px;
+        background-color: #814e99;
+    }
+
+    .logo {
+        visibility: hidden;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+    }
+
+    /* Основной контент */
+    .main {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    /* Титульный заголовок */
+    .title {
+        font-size: 18px;
+        text-align: center;
+        border-bottom: 2px solid rgba(155, 110, 195, 0.2);
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
+    /* Превращаем .option в слайдер */
+    .credit-options {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding: 10px;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    .option {
+        flex: 0 0 auto;
+        width: 80%;
+        min-width: 150px;
+        height: auto;
+        scroll-snap-align: center;
+        background: #f5e1ff;
+        padding: 15px;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    /* Кнопка "Buy now" */
+    .option button {
+        background: #ffcc00;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* Блок с преимуществами */
+    .features {
+        text-align: left;
+        padding: 10px;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        color: #814e99;
+    }
+
+    /* Футер */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #814e99;
+        color: white;
+    }
+}
+/* Контейнер слайдера */
+.swiper-container {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    overflow: hidden;
+    touch-action: pan-y; /* Позволяет вертикальный скролл, но не блокирует свайп вбок */
+}
+
+/* Делаем слайды более удобными для свайпа */
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #9b6ec3;
+    color: white;
+    border-radius: 10px;
+    height: 150px;
+}
+
+
+/* Навигационные кнопки */
+.swiper-button-next, .swiper-button-prev {
+    color: #ffcc00; /* Желтый цвет кнопок */
+}
+
+/* Пагинация (точки) */
+.swiper-pagination-bullet {
+    background: #ffcc00; /* Желтые точки */
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,6 +137,212 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+}
+.swiper {
+    width: 300px;
+    height: 120px;
+}
+
+.option {
+    display: none;
+}
+.sidebar {
+    display: none;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9b6ec3;
+    color: white;
+    width: 100%;
+    height: 8vh;
+}
+.logo {
+    visibility: hidden;
+}
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+.premium-icon {
+    font-size: 24px;
+    color: #ffcc00;
+}
+.title {
+    width: 80vw;
+    font-family: Arial;
+    font-size: 3vh;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 15px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid rgba(155, 110, 195, 0.2); /* Фиолетовая линия с 20% прозрачностью */
+}
+.offer-box {
+    background: #9b6ec3;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.offer-badge {
+    background: #ffcc00;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 15px;
+    border: 2px solid #9966CC;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    border: 2px solid #9b6ec3;
+    cursor: pointer;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    background: #9b6ec3; /* Фиолетовый фон при активации */
+    border-color: #9b6ec3;
+}
+.checkbox-container input[type="checkbox"]:checked::after {
+    content: '✔'; /* Белая галочка */
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+.checkbox-container label {
+    font-weight: 300;
+    font-size: 3.5vw;
+    color: #333;
+}
+
+.checkbox-container a {
+    color: #9966CC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.checkbox-container a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    background: #ffcc00;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    width: 90%;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.banner {
+    display: none;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #9b6ec3;
+    font-weight: bold;
+}
+.nav {
+    visibility: hidden;
+}
+.dia {
+    margin-left: 85vw;
+}
+.center-svg {
+
+}
+/* DESKTOP */
+@media (min-width: 1024px) {
+.swiper-container {
+    display: none; /* Убираем Swiper на ПК */
+}
+.dia {
+    display: none;
+}
+.svg-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.svg-container{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: max-content;
+}
+figcaption{
+    color: #9966CC;
+    width: 6vw;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.center-svg {
+    margin-top: 7vh;
+    z-index: 2;
+}
+
+.svg-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: black;
+    text-align: center;
+}
+
+/* Расположение вокруг центра */
+.top-left     { top: 0%; left: 40%;}
+.top-right    { top: 0%; right: 40%; }
+.right        { top: 42%; right: 33%;}
+.bottom-right { bottom: -10%; right: 40%; }
+.left         { bottom: 30%; left: 33%;}
+.bottom-left  { bottom: -10%; left: 40%; }
+.title {
+    margin-top: 0vh;
+    padding-bottom: 4vh;
+    width: 100%;
+    font-size: 5vh;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(155, 110, 195, 0.2); /* Фиолетовая линия с 20% прозрачностью */
 }
 .header {
     display: flex;
@@ -21,10 +357,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 48px;
     font-weight: bold;
-    margin-left: 20vw;
+    margin-left: 10vw;
+    visibility: visible;
 }
 .nav {
-    margin-right: 20vw;
+    visibility: visible;
+    margin-right: 16vw;
 }
 .nav a, .premium-btn {
     color: white;
@@ -34,7 +372,9 @@ body {
     padding: 15px;
 }
 .premium-btn {
-    background: #ffcc00;
+    margin-left: 20px;
+    background: #684677;
+    color: #ffcc00;
     border: none;
     padding: 8px 15px;
     cursor: pointer;
@@ -44,27 +384,30 @@ body {
 .main {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: max-content;
     padding: 20px;
 }
 .sidebar {
     margin-left: 10vw;
-    width: 20vw; /* Ширина sidebar */
+    width: 12vw; /* Ширина sidebar */
     background: rgba(244, 235, 250, 0.8); /* Светло-фиолетовый цвет с прозрачностью */
     padding: 20px;
+    border: 2px solid #9b6ec3; /* Добавленная граница вокруг sidebar */
     border-radius: 15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: left;
+    height: 100%;
+    flex-shrink: 0;
 }
-
 .profile {
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(155, 110, 195, 0.2); /* Фиолетовая линия с 20% прозрачностью */
     width: 100%;
     flex-direction: row;
     margin-bottom: 20px;
 }
-
 .avatar {
     width: 50px;
     height: 50px;
@@ -72,13 +415,12 @@ body {
     object-fit: cover;
     margin-bottom: 10px;
 }
-
 .username {
+    width: 5vw;
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
-
 .get-premium {
     background: #9b6ec3;
     color: white;
@@ -88,18 +430,14 @@ body {
     font-size: 12px;
     cursor: pointer;
 }
-
 .menu ul {
-
     list-style: none;
     padding: 0;
     width: 100%;
 }
-
 .menu li {
     margin: 10px 0;
 }
-
 .menu a {
     font-size: 2.5vh;
     display: flex;
@@ -111,25 +449,24 @@ body {
     border-radius: 8px;
     transition: background 0.3s;
 }
-
 .menu a img {
     width: 18px;
     height: 18px;
     margin-right: 10px;
 }
-
 .menu a:hover {
     background: rgba(155, 110, 195, 0.2);
 }
 .content {
     margin-right: 15vw;
     flex-grow: 1;
-    padding: 25px;
+    padding-left: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url('background-blur.png') no-repeat center center;
-    background-size: cover;
+    background: url('pattern.jpg') no-repeat center right;
+    background-size: 20vw;
+    height: 100%;
 }
 .credit-options {
     margin-top: 2.5vh;
@@ -138,6 +475,7 @@ body {
     gap: 15px;
     justify-content: center;
     width: 100%;
+    align-items: center;
 }
 .num {
     display: flex;
@@ -161,7 +499,7 @@ body {
     border: 2px solid #9b6ec3;
     text-align: center;
     cursor: pointer;
-    background: #f4effa;
+    background: rgba(250, 235, 250, 0.5);
     border-radius: 10px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     min-width: 150px;
@@ -192,11 +530,11 @@ body {
     content: "One time offer!";
     position: absolute;
     top: -10px;
-    left: 45%;
-    transform: translateX(-40%);
+    left: 30%;
+    transform: translateX(-17%);
     background: #ffcc00;
     color: black;
-    font-size: 12px;
+    font-size: 1.5vh;
     font-weight: bold;
     padding: 3px 8px;
     border-radius: 5px;
@@ -222,32 +560,33 @@ body {
     align-items: center;
     justify-content: center;
     }
-    .banner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: #c85a9d;
-        padding: 10px 15px;
-        border-radius: 10px;
-        color: white;
-        font-size: 16px;
-        font-weight: bold;
-        width: 55vw;
-        height: 10vh;
-    }
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #c85a9d;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    width: 60vw;
+    height: 10vh;
+}
 
-    .discount {
-        color: yellow;
-        font-size: 6vh;
-        font-weight: bold;
-        margin-right: 15px;
-    }
+.discount {
+    color: yellow;
+    font-size: 6vh;
+    font-weight: bold;
+    margin-right: 15px;
+    -webkit-text-stroke: 2px white; /* Белый контур 2px */
+}
 
-    .offer-text {
-        flex-grow: 1;
-        font-size: 2vh;
-        opacity: 0.9;
-    }
+.offer-text {
+    flex-grow: 1;
+    font-size: 2vh;
+    opacity: 0.9;
+}
 .offer-time {
     justify-content: center;
     align-items: center;
@@ -258,6 +597,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    padding: 20px;
 }
 .premium-features{
     width: 100%;
@@ -267,51 +607,50 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-  }
+}
 
-  .checkbox-container input[type="checkbox"] {
+.checkbox-container input[type="checkbox"] {
     margin-right: 5px;
     -webkit-appearance: none;
     appearance: none;
-    width: 15px;
+    width: 20px;
     height: 15px;
     border: 2px solid #9966CC;
     border-radius: 3px;
-    background-color: white;
+    position: relative;
+    display: inline-block;
+    border: 2px solid #9b6ec3;
     cursor: pointer;
-  }
+    background: white;
+    transition: all 0.3s ease;
+}
 
-  .checkbox-container input[type="checkbox"]:checked {
-    background-color: #9966CC;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9"><path d="M1.5 4.5l3 3 6-6" fill="#fff" stroke="#fff" stroke-width="2"/></svg>');
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  .checkbox-container label {
+.checkbox-container input[type="checkbox"]:checked {
+    background: #9b6ec3; /* Фиолетовый фон при активации */
+    border-color: #9b6ec3;
+}
+.checkbox-container input[type="checkbox"]:checked::after {
+    content: '✔'; /* Белая галочка */
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+.checkbox-container label {
     font-size: 14px;
     color: #333;
-  }
+}
 
-  .checkbox-container a {
+.checkbox-container a {
     color: #9966CC;
     text-decoration: none;
     font-weight: bold;
-  }
-
-  .checkbox-container a:hover {
-    text-decoration: underline;
-  }
-@media (max-width: 768px) {
-    .sidebar {
-        display: none;
-    }
-    .credit-options {
-        justify-content: space-evenly;
-    }
 }
-@media (max-width: 480px) {
-    .option {
-        flex: 1 1 100%;
-    }
+
+.checkbox-container a:hover {
+    text-decoration: underline;
+}
 }
