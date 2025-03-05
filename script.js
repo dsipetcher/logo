@@ -54,42 +54,26 @@ function checkWrappedElements() {
 
 // Запуск при загрузке и изменении размера окна
 document.addEventListener("DOMContentLoaded", function () {
-    // Инициализация Swiper
     const swiper = new Swiper(".swiper-container", {
-        slidesPerView: 1.1, // Количество видимых слайдов
+        slidesPerView: "auto", // Оставляем авто-ширину слайдов
         spaceBetween: 10, // Расстояние между слайдами
+        loop: true, // Включаем бесконечную прокрутку
         pagination: {
             el: ".swiper-pagination",
-            clickable: true, // Делаем точки кликабельными
+            clickable: true,
         },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-        loop: true, // Бесконечная прокрутка
-
-        grabCursor: true, // Делаем курсор "рукой" при наведении
+        grabCursor: true, // Курсор "рука" при наведении (полезно для десктопа)
+        touchEventsTarget: "wrapper", // Позволяет свайпать по всему слайдеру
+        touchRatio: 1, // Чувствительность свайпа (1 — стандарт)
+        touchAngle: 45, // Угол, при котором свайп работает
+        threshold: 5, // Минимальное движение пальца для срабатывания свайпа
     });
-
-    // Отключаем скролл страницы при свайпе по слайдеру
-    const swiperContainer = document.querySelector(".swiper-container");
-
-    swiperContainer.addEventListener("touchstart", (e) => {
-        e.stopPropagation();
-    });
-
-    swiperContainer.addEventListener("touchmove", (e) => {
-        e.stopPropagation();
-    });
-
-    swiperContainer.addEventListener("touchend", (e) => {
-        e.stopPropagation();
-    });
-
-    // Исправление ошибки блокировки свайпа
-    swiperContainer.addEventListener("wheel", (e) => {
-        e.preventDefault(); // Запрещаем скролл страницы колесиком мыши над слайдером
-    }, { passive: false });
 });
+
+
 
 

@@ -107,14 +107,15 @@
 /* Делаем слайды более удобными для свайпа */
 .swiper-slide {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: right;
     font-size: 18px;
     font-weight: bold;
     background: #9b6ec3;
     color: white;
     border-radius: 10px;
     height: 150px;
+    width: 85vw !important;
 }
 
 
