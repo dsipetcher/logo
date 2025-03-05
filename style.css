@@ -1,14 +1,7 @@
-@media (max-width: 768px) {
-    /* Общие стили */
-    body {
-        background: #ffffff;
-        font-size: 14px;
-    }
-
+@media (max-width: 390px) {
     /* Шапка */
     .header {
         height: 60px;
-        padding: 10px;
         background-color: #814e99;
     }
 
@@ -30,15 +23,6 @@
         padding: 15px;
     }
 
-    /* Титульный заголовок */
-    .title {
-        font-size: 18px;
-        text-align: center;
-        border-bottom: 2px solid rgba(155, 110, 195, 0.2);
-        width: 100%;
-        padding-bottom: 10px;
-    }
-
     /* Превращаем .option в слайдер */
     .credit-options {
         display: flex;
@@ -58,8 +42,24 @@
         scroll-snap-align: center;
         background: #f5e1ff;
         padding: 15px;
-        text-align: center;
+        text-align: right;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
         border-radius: 10px;
+    }
+    .option:hover::before {
+        content: "One time offer!";
+        position: absolute;
+        top: 20px;
+        left: 0%;
+        transform: translateX(-17%);
+        background: #ffcc00;
+        color: black;
+        font-size: 1.5vh;
+        font-weight: bold;
+        padding: 3px 8px;
+        border-radius: 5px;
     }
 
     /* Кнопка "Buy now" */
@@ -94,18 +94,24 @@
         background: #814e99;
         color: white;
     }
-}
+
 /* Контейнер слайдера */
 .swiper-container {
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     height: auto;
     overflow: hidden;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    padding-left: 8vw;
+    padding-bottom: 20px;
     touch-action: pan-y; /* Позволяет вертикальный скролл, но не блокирует свайп вбок */
 }
 
 /* Делаем слайды более удобными для свайпа */
 .swiper-slide {
+
     display: flex;
     align-items: right;
     justify-content: right;
@@ -115,7 +121,7 @@
     color: white;
     border-radius: 10px;
     height: 150px;
-    width: 85vw !important;
+    width: 80% !important;
 }
 
 
@@ -128,7 +134,6 @@
 .swiper-pagination-bullet {
     background: #ffcc00; /* Желтые точки */
 }
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -285,8 +290,16 @@ body {
 .dia {
     margin-left: 85vw;
 }
-.center-svg {
-
+.premium-features .center-svg {
+    padding-left: 20vw;
+}
+.premium-features .svg-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #684677;
+    padding: 10px;
+}
 }
 /* DESKTOP */
 @media (min-width: 1024px) {
@@ -318,6 +331,7 @@ figcaption{
 .center-svg {
     margin-top: 7vh;
     z-index: 2;
+    padding: 0;
 }
 
 .svg-item {
@@ -399,7 +413,7 @@ figcaption{
     display: flex;
     flex-direction: column;
     align-items: left;
-    height: 100%;
+    height: max-content;
     flex-shrink: 0;
 }
 .profile {

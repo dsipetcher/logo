@@ -18,45 +18,39 @@ function startTimer(duration) {
 window.onload = function () {
     startTimer(600); // 10 минут (600 секунд)
 };
-let debounceTimeout;
-
-function checkWrappedElements() {
-    const container = document.querySelector(".content");
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.querySelector(".credit-options");
     const options = document.querySelectorAll(".option");
 
-    const containerWidth = container.clientWidth;
-    let prevBottom = null;
+    function checkWrappedElements() {
+        let prevBottom = null;
 
-    options.forEach((option) => {
-        const rect = option.getBoundingClientRect();
+        options.forEach((option) => {
+            const rect = option.getBoundingClientRect();
 
-        // Проверка, если элемент переносится на новую строку (по вертикали)
-        if (prevBottom !== null && rect.top > prevBottom) {
-            option.classList.add("row");  // Элемент перенесся, добавляем класс
-        } else {
-            option.classList.remove("row");  // Элемент не перенесся, удаляем класс
-        }
+            if (prevBottom !== null && rect.top > prevBottom) {
+                option.classList.add("row");
+            } else {
+                option.classList.remove("row");
+            }
 
-        prevBottom = rect.bottom;  // Обновляем нижнюю границу для следующего элемента
+            prevBottom = rect.bottom;
+        });
+    }
 
-        // Дополнительно проверим, если элемент занял всю доступную ширину
-        if (rect.left + rect.width <= containerWidth) {
-            option.classList.remove("row");  // Если элемент помещается в одну строку, удаляем класс
-        }
-    });
+    // Проверка при изменении размера окна
+    window.addEventListener("resize", checkWrappedElements);
 
-    // Дебаунс для обновления классов при изменении ширины
-    clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(() => {
-        // Обновление классов при изменении размеров экрана
-    }, 200); // 200 мс задержка, чтобы не срабатывать на каждое изменение
-}
+    // Первичная проверка при загрузке страницы
+    checkWrappedElements();
+});
+
 
 // Запуск при загрузке и изменении размера окна
 document.addEventListener("DOMContentLoaded", function () {
     const swiper = new Swiper(".swiper-container", {
         slidesPerView: "auto", // Оставляем авто-ширину слайдов
-        spaceBetween: 10, // Расстояние между слайдами
+        spaceBetween: 50, // Расстояние между слайдами
         loop: true, // Включаем бесконечную прокрутку
         pagination: {
             el: ".swiper-pagination",
@@ -68,11 +62,18 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         grabCursor: true, // Курсор "рука" при наведении (полезно для десктопа)
         touchEventsTarget: "wrapper", // Позволяет свайпать по всему слайдеру
-        touchRatio: 1, // Чувствительность свайпа (1 — стандарт)
+        touchRatio: 1.1, // Чувствительность свайпа (1 — стандарт)
         touchAngle: 45, // Угол, при котором свайп работает
-        threshold: 5, // Минимальное движение пальца для срабатывания свайпа
+        threshold: 1, // Минимальное движение пальца для срабатывания свайпа
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const pagination = document.querySelector('.swiper-pagination');
+    if (pagination) {
+        pagination.style.display = 'none'; // Скрыть пагинацию
+    }
+});
+
 
 
 
